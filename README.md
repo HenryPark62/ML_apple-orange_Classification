@@ -27,17 +27,17 @@
 
 | 버전 | 주요 특징 | 결과 요약 |
 |:----|:---------|:--------|
-| **Baseline CNN** | - 간단한 Conv2D + MaxPooling 기반 CNN<br>- 과적합 발생 | - Overfitting 심각<br>- Test 정확률 85% |
-| **강화 CNN (VGG-Style)** | - 깊은 Conv Block (32→512)<br>- FC(1024) + Dropout(0.5) | - 성능 회복<br>- Test 정확률 93% |
-| **최적화 VGG CNN** | - Label Smoothing 적용<br>- ReduceLROnPlateau 적용 | - 과적합 방지<br>- Test 정확률 약 95% |
+| **Baseline CNN** | - 간단한 Conv2D + MaxPooling 기반 CNN | - 정확도는 나쁘지 않지만 오분류 케이스 비율이 낮지 않음<br>- Test 정확률 약 89% |
+| **강화 Baseline CNN** | - Baseline CNN + Data Augmentation | - 정확도 향상<br>- Test 정확률 약 94% |
+| **VGG-Style CNN** | - Data Augmentation 적용<br>- Label Smoothing 적용<br>- ReduceLROnPlateau 적용 | - VGG 모델 스타일로 정교하게 구현<br>- 정확도 향상<br>- Test 정확률 약 95% |
 
 ---
 
 ## 📊 Research Summary
 
-* Baseline CNN → VGG style CNN → Label Smoothing & LR Scheduler 적용 VGG style CNN→ 
+* Baseline CNN → Baseline CNN + Data Augmentation → Label Smoothing & Learning Rate Scheduler 적용 VGG style CNN 
 * 최종 결과: **VGG style CNN (model_v5)** (Test 정확률 약 95%)
-* 소량 데이터에서는 Fine-Tuning의 위험성이 존재하지만, 적절한 조정으로 높은 성능 확보
+* 소량 데이터에서는 Fine-Tuning의 필요성이 크게 느껴지지 않음
 * Label Smoothing, ReduceLROnPlateau 적용으로 일반화 성능 강화
 
 ---
