@@ -67,7 +67,7 @@
 
 
 
-###**Binary Classification**<br>
+**Binary Classification**<br>
 
 ![6949e362-4bd5-40b1-9986-b60f94474e31](https://github.com/user-attachments/assets/62206bfa-ef72-46ee-ab01-b4bbf95ad7bd)
 
