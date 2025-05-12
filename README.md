@@ -29,7 +29,7 @@
 |:----|:---------|:--------|
 | **Baseline CNN** | - 간단한 Conv2D + MaxPooling 기반 CNN | - 정확도는 나쁘지 않지만 오분류 케이스 비율이 낮지 않음<br>- Test Accuracy 약 89% |
 | **강화 Baseline CNN** | - Baseline CNN + Data Augmentation | - 정확도 향상<br>- Test Accuracy 약 94% |
-| **VGG-Style CNN** | - Data Augmentation 적용<br>- Label Smoothing 적용<br>- ReduceLROnPlateau 적용 | - VGG 모델 스타일로 정교하게 구현<br>- 정확도 향상<br>- Test Accuracy 약 95% |
+| **VGG-Style CNN** | - Data Augmentation 적용<br>- Label Smoothing 적용<br>- ReduceLROnPlateau 적용 | - VGG 모델 스타일로 구현<br>- 정확도 향상<br>- Test Accuracy 약 95% |
 
 ---
 
