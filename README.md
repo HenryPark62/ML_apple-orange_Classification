@@ -27,9 +27,9 @@
 
 | 버전 | 주요 특징 | 결과 요약 |
 |:----|:---------|:--------|
-| **Baseline CNN** | - 간단한 Conv2D + MaxPooling 기반 CNN | - 정확도는 나쁘지 않지만 오분류 케이스 비율이 낮지 않음<br>- Test 정확률 약 89% |
-| **강화 Baseline CNN** | - Baseline CNN + Data Augmentation | - 정확도 향상<br>- Test 정확률 약 94% |
-| **VGG-Style CNN** | - Data Augmentation 적용<br>- Label Smoothing 적용<br>- ReduceLROnPlateau 적용 | - VGG 모델 스타일로 정교하게 구현<br>- 정확도 향상<br>- Test 정확률 약 95% |
+| **Baseline CNN** | - 간단한 Conv2D + MaxPooling 기반 CNN | - 정확도는 나쁘지 않지만 오분류 케이스 비율이 낮지 않음<br>- Test Accuracy 약 89% |
+| **강화 Baseline CNN** | - Baseline CNN + Data Augmentation | - 정확도 향상<br>- Test Accuracy 약 94% |
+| **VGG-Style CNN** | - Data Augmentation 적용<br>- Label Smoothing 적용<br>- ReduceLROnPlateau 적용 | - VGG 모델 스타일로 정교하게 구현<br>- 정확도 향상<br>- Test Accuracy 약 95% |
 
 ---
 
@@ -44,25 +44,30 @@
 
 ## 📊 ROC Curve, Confusion Matrix, Classification Report
 
+###**Baseline CNN**
 
-* **ROC Curve**
+![163381e4-ee1c-441a-954e-7e8aa5115e1d](https://github.com/user-attachments/assets/db1441c7-9580-4bd8-a050-5555c6585c35)
+![94c4242f-f0d0-43af-8a14-427653a26de9](https://github.com/user-attachments/assets/1ab71585-2739-44ad-b3e2-94b2ffb44f17)
+<img width="539" alt="스크린샷 2025-05-12 오후 11 57 13" src="https://github.com/user-attachments/assets/ae8ccbf9-abc6-4791-823a-4e300971ee98" />
+
+
+###**Baseline CNN + Data Augmentation**
+
+![4654f381-e0f8-4c1c-8258-dec0ceed738c](https://github.com/user-attachments/assets/48a18da8-86e9-45b4-8b85-884557ba62d3)
+![6a841c34-aabd-4bb8-b624-d53d1f75134e](https://github.com/user-attachments/assets/daa7c362-f74d-4fee-a622-75bf04004e06)
+<img width="539" alt="스크린샷 2025-05-12 오후 11 57 50" src="https://github.com/user-attachments/assets/a3f8bbfa-d353-409e-8230-4a4b0c2af7bb" />
+
+
+###**VGG-Style CNN**
+![cd0d8e64-ab47-4aad-b08d-c4de63316ba8](https://github.com/user-attachments/assets/643894e4-25b5-4eec-9a90-ed5735b24ced)
+![a1ccd89b-e834-4691-a616-d97567cb0b12](https://github.com/user-attachments/assets/e2d90cae-860c-4169-9c0f-c504edff593b)
+<img width="553" alt="스크린샷 2025-05-12 오후 10 13 25" src="https://github.com/user-attachments/assets/4b9bf396-7648-4acc-82fe-3883e2301a4b" />
 ![1756baac-d510-4c2f-b9e7-4596972338b4](https://github.com/user-attachments/assets/98d1fbfe-13c7-46db-8c3e-446ca84ce5f5)
 
-* AUC (Area Under Curve): 약 0.96
-
-* **Confusion Matrix (model_v5 (VGG style))**
-
-![a1ccd89b-e834-4691-a616-d97567cb0b12](https://github.com/user-attachments/assets/e2d90cae-860c-4169-9c0f-c504edff593b)
 
 
 
-* **Classification Report**
-
-<img width="553" alt="스크린샷 2025-05-12 오후 10 13 25" src="https://github.com/user-attachments/assets/4b9bf396-7648-4acc-82fe-3883e2301a4b" />
-
-
-
-* Binary Classification
+###**Binary Classification**
 
 ![6949e362-4bd5-40b1-9986-b60f94474e31](https://github.com/user-attachments/assets/62206bfa-ef72-46ee-ab01-b4bbf95ad7bd)
 
@@ -74,21 +79,22 @@
 
 * **Baseline CNN**
   * 빠른 학습 가능
-  * Overfitting 심각
+  * 정확도가 아쉬움
 
-* **VGG-Style 강화 CNN**
-  * Regularization 적용 및 깊은 레이어 구조로 Test 성능 향상
+* **강화 Baseline CNN** 
+  * Data Augmentation을 통해 이미 높은 수준의 성능 향상 (Test Accuracy 약 94%)
+  * 소량 데이터에서는 다른 모델보다 비교적 경량의 Baseline 모델을 사용해도 무리가 없을 것 같음
 
-* **MobileNetV2 (전이학습)**
-  * 경량화 + 전이학습 효과로 가장 우수한 성능 확보
+* **VGG-Style CNN**
+  * Data Augmentation, Label Smoothing, ReduceLROnPlateau 적용을 통해 모델 성능의 향상, 학습 효율의 향상을 보임
 
 ---
 
 ## 💡 Insight
 
-* Label Smoothing + Learning Rate Scheduler를 통한 일반화 성능 강화
-* Fine-Tuning은 소량 데이터에서는 신중한 조정이 필요
-* Data Augmentation은 unseen 데이터 대응력 향상에 효과적
+* Label Smoothing + Learning Rate Scheduler를 통한 학습 효율 및 일반화 성능 강화
+* Fine-Tuning은 소량 데이터에서는 신중한 조정이 필요 (소량 데이터에서는 Fine-Tuning보단 Data Augmentation이 더 좋아보인다)
+* Data Augmentation은 unseen 데이터 (Test data) 대응력 향상에 효과적
 * Confusion Matrix를 통해 정/오분류 사례를 검토하고 필요한 추가 데이터 수집 방향을 설정할 수 있음
 
 ---
