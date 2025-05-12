@@ -44,30 +44,30 @@
 
 ## 📊 ROC Curve, Confusion Matrix, Classification Report
 
-###**Baseline CNN**
+**Baseline CNN**<br>
 
 ![163381e4-ee1c-441a-954e-7e8aa5115e1d](https://github.com/user-attachments/assets/db1441c7-9580-4bd8-a050-5555c6585c35)
 ![94c4242f-f0d0-43af-8a14-427653a26de9](https://github.com/user-attachments/assets/1ab71585-2739-44ad-b3e2-94b2ffb44f17)
-<img width="539" alt="스크린샷 2025-05-12 오후 11 57 13" src="https://github.com/user-attachments/assets/ae8ccbf9-abc6-4791-823a-4e300971ee98" />
+<img width="539" alt="스크린샷 2025-05-12 오후 11 57 13" src="https://github.com/user-attachments/assets/ae8ccbf9-abc6-4791-823a-4e300971ee98" /><br>
 
 
-###**Baseline CNN + Data Augmentation**
+**Baseline CNN + Data Augmentation**<br>
 
 ![4654f381-e0f8-4c1c-8258-dec0ceed738c](https://github.com/user-attachments/assets/48a18da8-86e9-45b4-8b85-884557ba62d3)
 ![6a841c34-aabd-4bb8-b624-d53d1f75134e](https://github.com/user-attachments/assets/daa7c362-f74d-4fee-a622-75bf04004e06)
-<img width="539" alt="스크린샷 2025-05-12 오후 11 57 50" src="https://github.com/user-attachments/assets/a3f8bbfa-d353-409e-8230-4a4b0c2af7bb" />
+<img width="539" alt="스크린샷 2025-05-12 오후 11 57 50" src="https://github.com/user-attachments/assets/a3f8bbfa-d353-409e-8230-4a4b0c2af7bb" /><br>
 
 
-###**VGG-Style CNN**
+###**VGG-Style CNN**<br>
 ![cd0d8e64-ab47-4aad-b08d-c4de63316ba8](https://github.com/user-attachments/assets/643894e4-25b5-4eec-9a90-ed5735b24ced)
 ![a1ccd89b-e834-4691-a616-d97567cb0b12](https://github.com/user-attachments/assets/e2d90cae-860c-4169-9c0f-c504edff593b)
 <img width="553" alt="스크린샷 2025-05-12 오후 10 13 25" src="https://github.com/user-attachments/assets/4b9bf396-7648-4acc-82fe-3883e2301a4b" />
-![1756baac-d510-4c2f-b9e7-4596972338b4](https://github.com/user-attachments/assets/98d1fbfe-13c7-46db-8c3e-446ca84ce5f5)
+![1756baac-d510-4c2f-b9e7-4596972338b4](https://github.com/user-attachments/assets/98d1fbfe-13c7-46db-8c3e-446ca84ce5f5)<br>
 
 
 
 
-###**Binary Classification**
+###**Binary Classification**<br>
 
 ![6949e362-4bd5-40b1-9986-b60f94474e31](https://github.com/user-attachments/assets/62206bfa-ef72-46ee-ab01-b4bbf95ad7bd)
 
@@ -75,7 +75,7 @@
 
 ---
 
-## 📊 결론 (Baseline CNN vs 최적화 CNN vs MobileNetV2)
+## 📊 결론 (Baseline CNN vs 강화 Baseline CNN vs VGG-Style CNN)
 
 * **Baseline CNN**
   * 빠른 학습 가능
